@@ -4,20 +4,49 @@
 		<title>Tic Tac Toe</title>
 		<link rel="stylesheet" href="styles/normalize.css" type="text/css" />
 		<link rel="stylesheet" href="styles/stylesheet.css" type="text/css" />
+		<script>
+			function clearCells() {
+					allCells = document.getElementsByClassName("cell");
+					for (x in allCells){
+						x.innerHTML='';
+					}
+			}			
+		
+			function isEven(value) {
+				if (value%2 == 0)
+					return true;
+				else
+					return false;
+			}
+			var playCount = 1;
+			function playerTurn(id) {
+				if(isEven(playCount)) {
+					document.getElementById(id).innerHTML = "<img class='o' src='resources/images/xo_sprites.png'>";
+				}
+				else {
+					document.getElementById(id).innerHTML = "<img class='x' src='resources/images/xo_sprites.png'>";
+				}
+				playCount += 1;
+			}
+			
+
+			
+		</script>
 	</head>
 	<body>
 		<header><h1 class="font-effect-anaglyph">Tiq Taq Toe</h1></header>
+		<nav><h2>X's Turn</h2></nav>
 		<div class="container">
 			<div class="row1">
-				<div id="c1_1" class="col1"></div><div id="c1_2" class="col2"></div><div id="c1_3" class="col3"></div>
+				<div id="c1" class="cell col1" onclick="playerTurn(this.id)"></div><div id="c2" class="cell col2" onclick="playerTurn(this.id)"></div><div id="c3" class="cell col3" onclick="playerTurn(this.id)"></div>
 			</div>
 			<div class="row2">
-				<div id="c1_1" class="col1"></div><div id="c1_2" class="col2"></div><div id="c1_3" class="col3"></div>
+				<div id="c4" class="cell col1" onclick="playerTurn(this.id)"></div><div id="c5" class="cell col2" onclick="playerTurn(this.id)"></div><div id="c6" class="cell col3" onclick="playerTurn(this.id)"></div>
 			</div>
 			<div class="row2">
-				<div id="c1_1" class="col1"></div><div id="c1_2" class="col2"></div><div id="c1_3" class="col3"></div>
+				<div id="c7" class="cell col1" onclick="playerTurn(this.id)"></div><div id="c8" class="cell col2" onclick="playerTurn(this.id)"></div><div id="c9" class="cell col3" onclick="playerTurn(this.id)"></div>
 			</div>
 		</div>
-		<div id="reset">New Game</div>
+		<div id="reset" onclick="clearCells()">New Game</div>
 	</body>
 </html>

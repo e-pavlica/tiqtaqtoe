@@ -14,9 +14,27 @@ h1 {
 	text-align: center;
 	font-size: 40px;
 	}
+h2 {
+	margin: 0 auto 10px;
+	text-align: center;
+	color:#FFFFFF;
+	font-family: "Roboto", sans-serif;
+	font-size: 14px;
+}
 div {
 	margin: 0;
 	padding: 0;			
+	overflow: hidden;
+}
+
+.x {
+	height:50px;
+	
+}
+
+.o {
+	height:50px;
+	margin-left:-50px
 }
 #reset {
 	background-color: black;

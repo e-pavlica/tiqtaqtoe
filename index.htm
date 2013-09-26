@@ -1,35 +1,13 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta name="viewport" content="width=device-width, initial_scale=1.0, user-scalable=no" />
 		<title>Tic Tac Toe</title>
 		<link rel="stylesheet" href="styles/normalize.css" type="text/css" />
 		<link rel="stylesheet" href="styles/stylesheet.css" type="text/css" />
+		<script src="js/ttt_gamescripts.js"></script>
 		<script>
-			function clearCells() {
-				i = 0;
-				var allCells = document.getElementsByClassName("cell");
-					while(i < allCells.length){
-						allCells[i].innerHTML='';
-						i += 1;
-					}
-			}			
-		
-			function isEven(value) {
-				if (value%2 == 0)
-					return true;
-				else
-					return false;
-			}
-			var playCount = 1;
-			function playerTurn(id) {
-				if(isEven(playCount)) {
-					document.getElementById(id).innerHTML = "<img class='o' src='resources/images/xo_sprites.png'>";
-				}
-				else {
-					document.getElementById(id).innerHTML = "<img class='x' src='resources/images/xo_sprites.png'>";
-				}
-				playCount += 1;
-			}
+
 			
 
 			

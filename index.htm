@@ -6,9 +6,11 @@
 		<link rel="stylesheet" href="styles/stylesheet.css" type="text/css" />
 		<script>
 			function clearCells() {
-					allCells = document.getElementsByClassName("cell");
-					for (x in allCells){
-						x.innerHTML='';
+				i = 0;
+				var allCells = document.getElementsByClassName("cell");
+					while(i < allCells.length){
+						allCells[i].innerHTML='';
+						i += 1;
 					}
 			}			
 		

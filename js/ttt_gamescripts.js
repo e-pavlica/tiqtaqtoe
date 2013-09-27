@@ -20,8 +20,7 @@ function loadMe(){
 // Clear Cell Contents for New Game
 function clearCells() {
 	i = 0;
-	//var winNotifDiv = document.getElementById("winNotif");
-	var allCells = document.getElementsByClassName("cell");
+		var allCells = document.getElementsByClassName("cell");
 		while(i < allCells.length){
 			allCells[i].innerHTML='';
 			i += 1;
@@ -55,10 +54,18 @@ function playerChange(str){
 }
 
 
-// Function that places Xs & Os
+//Display a Tie notification
+function tie(){
+	if(playCount > 9){
+	document.getElementById("notif").innerHTML = "It's a Tie!";
+	winNotifDiv.style.display = "block";
+	}
+}
+
+// Function that places Xs & Os and sends play to winCheck
+// also executes playerChange if no win
 function playerTurn(id) {
 	var cell = document.getElementById(id);
-	var winNotifDiv = document.getElementById("winNotif");
 	
 	
 	if(cell.innerHTML.length == 0){
@@ -70,7 +77,8 @@ function playerTurn(id) {
 				winNotifDiv.style.display = "block";
 			}
 			else {
-			playerChange("X");
+				tie();
+				playerChange("X");
 			}
 		}
 		else if(isEven(playCount) == false) {
@@ -82,7 +90,8 @@ function playerTurn(id) {
 				winNotifDiv.style.display = "block";
 			}
 			else {
-			playerChange("O");
+				tie();
+				playerChange("O");
 			}
 		}
 	}

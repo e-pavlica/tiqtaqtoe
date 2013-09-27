@@ -5,9 +5,21 @@
 
 */
 
-// Clear Cell Contenets for New Game
+
+// On Load function to define variables
+function loadMe(){
+	//Define the winNotif div for use to switch display (none / block)
+		var winNotifDiv = document.getElementById("winNotif");
+		winNotifDiv.style.display = "none";
+}
+
+	
+
+
+// Clear Cell Contents for New Game
 function clearCells() {
 	i = 0;
+	
 	var allCells = document.getElementsByClassName("cell");
 		while(i < allCells.length){
 			allCells[i].innerHTML='';
@@ -33,24 +45,26 @@ var playCount = 1;
 // Function that places Xs & Os
 function playerTurn(id) {
 	var cell = document.getElementById(id);
+	var winNotifDiv = document.getElementById("winNotif");
+	
 	
 	if(cell.innerHTML.length == 0){
 		if(isEven(playCount)) {
 			cell.innerHTML = "<img class='o' src='resources/images/xo_sprites.png'>";
 			cell.className += " placed_o";
 			playCount += 1;
-			document.getElementById("player").innerHTML = "X";
+			document.getElementsByClassName("player").innerHTML = "X";
 			if(winCheck(placedItems("o"))){
-				alert("O Wins!");
+				winNotifDiv.style.display = "block";
 			}
 		}
 		else if(isEven(playCount) == false) {
 			cell.innerHTML = "<img class='x' src='resources/images/xo_sprites.png'>";
 			cell.className += " placed_x";
 			playCount += 1;
-			document.getElementById("player").innerHTML = "O";
+			document.getElementsByClassName("player").innerHTML = "O";
 			if(winCheck(placedItems("x"))){
-				alert("X Wins!");
+				winNotifDiv.style.display = "block";
 			}
 		}
 	}

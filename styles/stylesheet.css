@@ -76,3 +76,27 @@ div {
 	left: -9999px;
 	background: url("../resources/images/xo_sprites.png");
 }
+#winNotif {
+	width: 70%;
+	height: 75px;
+	background-color: red;
+	color: white;
+	border: 1px solid black;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	z-index: 5;
+	position: relative;
+	top: -154px;
+	margin: 39px auto;
+	text-align: center;
+	padding: 5px;
+	display:none;
+	
+}
+.playAgain {
+	margin: 0 auto;
+	background: black;
+	border: 1px solid black;
+	padding: 5px;
+	width: 75%;
+}

@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		<header><h1 class="font-effect-anaglyph">Tiq Taq Toe</h1></header>
-		<nav><h2>X's Turn</h2></nav>
+		<nav><h2><span id="player">X</span>'s Turn</h2></nav>
 		<div class="container">
 			<div class="row1">
 				<div id="c1" class="cell col1" onclick="playerTurn(this.id)"></div><div id="c2" class="cell col2" onclick="playerTurn(this.id)"></div><div id="c3" class="cell col3" onclick="playerTurn(this.id)"></div>
@@ -23,5 +23,6 @@
 			</div>
 		</div>
 		<div id="reset" onclick="clearCells()">New Game</div>
+		<span id="invisi_load"></span>
 	</body>
 </html>

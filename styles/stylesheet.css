@@ -71,4 +71,8 @@ div {
 	/*border-left: 2px solid black; */
 	margin-right: 2px;
 }
-
+#invisi_load {
+	opacity:0;
+	left: -9999px;
+	background: url("../resources/images/xo_sprites.png");
+}

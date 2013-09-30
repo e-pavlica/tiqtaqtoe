@@ -79,9 +79,8 @@ div {
 #winNotif {
 	width: 70%;
 	height: 75px;
-	background-color: red;
+	background-color: rgb(36,36,36);
 	color: white;
-	border: 1px solid black;
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
 	z-index: 5;
@@ -91,10 +90,11 @@ div {
 	text-align: center;
 	padding: 5px;
 	display:none;
+	box-shadow: -2px 0 3px red, 2px 0 3px cyan;
 	
 }
 .playAgain {
-	margin: 0 auto;
+	margin: 10px auto 0;
 	background: black;
 	border: 1px solid black;
 	padding: 5px;

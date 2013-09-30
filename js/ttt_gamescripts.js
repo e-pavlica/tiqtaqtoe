@@ -6,31 +6,34 @@
 */
 
 var winNotifDiv;
+var boardState;
+
 
 // On Load function to define variables
-function loadMe(){
+window.onload = function loadMe(){
 	//Define the winNotif div for use to switch display (none / block)
 		winNotifDiv = document.getElementById("winNotif");
 		winNotifDiv.style.display = "none";
-}
+};
 
 	
 
 
 // Clear Cell Contents for New Game
 function clearCells() {
-	i = 0;
+    	i = 0;
 		var allCells = document.getElementsByClassName("cell");
 		while(i < allCells.length){
 			allCells[i].innerHTML='';
 			i += 1;
-			//Reset Counter
-			playCount = 1;
-			//Clear boardState
-			boardState = 0;
-			//Clear Win notification if present
-			winNotifDiv.style.display = "none";
 		}
+		//Reset Counter
+		playCount = 1;
+		//Clear boardState
+		boardState = 0;
+		//Clear Win notification if present
+		winNotifDiv.style.display = "none";
+		
 }			
 
 //Help function for playerTurn to determine if playCount is even
@@ -103,7 +106,7 @@ function playerTurn(id) {
 
 //Convert filled cells to number for win check
 function placedItems(gp) {
-	var boardState = "";
+	boardState = "";
 	var cellArray = document.getElementsByClassName("cell");
 
 	for(i=0;i<cellArray.length;++i){

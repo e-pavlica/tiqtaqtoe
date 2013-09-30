@@ -16,7 +16,17 @@ window.onload = function loadMe(){
 		winNotifDiv.style.display = "none";
 };
 
-	
+//This code is jQuery's
+function RemoveClassFromElement(elem,value){
+ var rspaces = /\s+/;
+ var rclass = /[\n\t]/g
+ var classNames = (value || "").split( rspaces );
+ var className = (" " + elem.className + " ").replace(rclass, " ");
+ for ( var c = 0, cl = classNames.length; c < cl; c++ ) {
+  className = className.replace(" " + classNames[c] + " ", " ");
+ }
+ elem.className = className.replace(/^\s+|\s+$/g,'');//trim
+}
 
 
 // Clear Cell Contents for New Game
@@ -25,6 +35,8 @@ function clearCells() {
 		var allCells = document.getElementsByClassName("cell");
 		while(i < allCells.length){
 			allCells[i].innerHTML='';
+			RemoveClassFromElement(allCells[i],"placed_x");
+			RemoveClassFromElement(allCells[i],"placed_o");
 			i += 1;
 		}
 		//Reset Counter
